@@ -1,40 +1,94 @@
-function logIn() {
+$(document).ready(function() {
 
-  var userN = prompt("What Is Your Name");
-  var message = document.getElementsByTagName("h2")[0]
-    .innerHTML = userN + ", BrightIdeas Will Change Your Life";
-
-} //end function logIn()
+    var imageArray = new Array(); //create new array to preload images
+    var numImages = 2;
+    var imageCounter = 0;
 
 
-// create (global!) variable called numImages to hold total number of images;
-// create new array to hold preload images; call this array imageArray
-var numImages = 2;
-var imageArray = [];
-//use for loop to populate imageArray
-for (var i = 0; i < numImages; i++) {
-  //set image src property to image path, preloading image in the process
-  imageArray[i] = new Image();
-  imageArray[i].src = "Images/brightIdea" + (i + 1) + ".png";
-  console.log(imageArray[i].src.toString());
-}
+    for (var i = 0; i < numImages; i++) {
+        imageArray[i] = new Image(); //set image src property to image path,preloading image in the process
+        imageArray[i].src = "Images/brightIdea" + (i + 1) + ".png";
+    }
 
 
-var i4_circleThru = 0; // global variable ( be careful) use for the function CicleThru()
+    //if browser does not support the image object, exit.
+    if (!document.images)
+        return;
 
-function circleThru() {
-  document.getElementById("blinking_image").src = imageArray[i4_circleThru % 2].src;
-  i4_circleThru++;
+    setInterval(function() {
+
+        $("#blinking_image").attr('src', imageArray[imageCounter++].src);
+
+        if (imageCounter == numImages)
+            imageCounter = 0;
+
+    }, 700); //end setInterval
 
 
-  //if browser does not support the image object, exit.
 
-  //  write images, from imageArray to HTML doc
+}); //end $(document).ready
 
-  // call the setTimeout method on circleThru
-  setTimeout("circleThru()", 700);
 
-} //end circleThru()
 
-circleThru();
-// call circleThru()
+
+/******************************************************************************/
+
+
+$(document).ready(function() {
+    $("#login").click(function() {
+        var userName = prompt("Enter Your Name Here:");
+        var $temp = document.getElementsByTagName("h2")[0]
+    .innerHTML = userName + ", BrightIdeas Will Change Your Life";
+
+        /* your code here  to get and display user name */
+        /* no other variables permitted here */
+        /* google why $ in front of jQuery variable temp */
+
+    }); //end click(function()
+}); //end $(document).ready
+
+
+
+/****************************************************************************/
+
+$(document).ready(function() {
+    $("._submit").click(function() {
+
+       //variable holding regular expression
+        var notInName;
+
+
+        /* test if  class reqd is blank or has incorrect chars in it;
+        return false if this is the case */
+
+
+        var $emailValidator = $("form").validate({
+
+
+		/* state email rules here */
+
+        }); //end validate
+
+
+        var $isEmailValid;
+
+
+        /*  test  boolean var  isEmailValid here
+        if false return false, else submit form, reset and return to index.hrml */
+
+
+
+    }); //end click
+}); //end ready
+
+/***********************************************************************************/
+
+$(document).ready(function() {
+    $("._reset").click(function() {
+
+        /* your code to reset the form */
+
+    });
+});
+
+/************************************************************************************/

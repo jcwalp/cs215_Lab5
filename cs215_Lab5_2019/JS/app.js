@@ -37,8 +37,10 @@ $(document).ready(function() {
 $(document).ready(function() {
     $("#login").click(function() {
         var userName = prompt("Enter Your Name Here:");
-        var $temp = document.getElementsByTagName("h2")[0]
-    .innerHTML = userName + ", BrightIdeas Will Change Your Life";
+        if (userName != ""){
+          var $temp = document.getElementsByTagName("h2")[0]
+          .innerHTML = userName + ", BrightIdeas Will Change Your Life";
+        }
 
         /* your code here  to get and display user name */
         /* no other variables permitted here */
@@ -55,7 +57,8 @@ $(document).ready(function() {
     $("._submit").click(function() {
 
        //variable holding regular expression
-        var notInName;
+        var notInName = ^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$;
+        if ($())
 
 
         /* test if  class reqd is blank or has incorrect chars in it;

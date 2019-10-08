@@ -7,7 +7,7 @@ $(document).ready(function() {
 
     for (var i = 0; i < numImages; i++) {
         imageArray[i] = new Image(); //set image src property to image path,preloading image in the process
-        imageArray[i].src = "Images/brightIdea" + (i + 1) + ".png";
+        imageArray[i].src = "images/brightIdea" + (i + 1) + ".png";
     }
 
 
@@ -36,11 +36,8 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $("#login").click(function() {
-        var userName = prompt("Enter Your Name Here:");
-        if (userName != ""){
-          var $temp = document.getElementsByTagName("h2")[0]
-          .innerHTML = userName + ", BrightIdeas Will Change Your Life";
-        }
+        var userName;
+        var $temp;
 
         /* your code here  to get and display user name */
         /* no other variables permitted here */
@@ -57,10 +54,26 @@ $(document).ready(function() {
     $("._submit").click(function() {
 
        //variable holding regular expression
-        var notInName = ^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$;
-        if ($())
+        var notInName = /^[A-Z0-9][A-Z0-9._%+-]{0,63}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/;
 
+        var lastname = $('#last_name').val();
+        var email = $('#email').val();
+        console.log(lastname);
+        console.log(email);
 
+        if (lastname.length < 1){
+          console.log("Less than 1");
+          return false;
+        }
+        var validLastName = notInName.test(lastname);
+        if (!validLastName){
+          console.log("Invalid Chars");
+          return false;
+        }
+        else {
+          console.log("Good");
+          return true;
+        }
         /* test if  class reqd is blank or has incorrect chars in it;
         return false if this is the case */
 

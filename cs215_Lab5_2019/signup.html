@@ -33,14 +33,14 @@
           <div class="left">
             <h2>Sign Up</h2>
             <div class="signUpContainer">
-              <form action="mailto:email.isp.com" method="post">
+              <form action="mailto:" method="post">
                 <p class="input-fields">
-                  First name:<input type="text" name="firstname">Last name:<input class="reqd" type="text" name="lastname"> <br>
+                  First name:<input type="text" name="firstname">Last name:<input class="reqd" type="text" id="last_name" name="lastname"> <br>
                   Address: <input type="text" name="adress"><br>
                   City: <input type="text" name="city"> <br>
                   State: <input type="text" name="state"> <br>
                   Zip: <input type="text" name="zip"> <br>
-                  E-mail Adress: <input class="reqd" type="text" name="email">
+                  E-mail Adress: <input class="reqd" type="text" id="email" name="email">
                 </p>
                 <hr />
                 <p class="input-fields">Have you ever paid for ideas?
@@ -63,7 +63,7 @@
                     </div>
                   </p>
                   <p>
-                    <input type="submit" value="Submit">
+                    <input type="submit" class="_submit"value="Submit">
                     <input type="reset" value="Reset">
                   </p>
               </form>
@@ -117,6 +117,8 @@
   </div>
 
   <!--end container-->
+  <script src="JS/app.js" charset="utf-8" type="text/javascript"></script>
+
 </body>
 
 </html>

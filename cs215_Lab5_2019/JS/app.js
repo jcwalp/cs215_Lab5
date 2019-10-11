@@ -70,7 +70,7 @@ $(document).ready(function() {
           console.log("Invalid Chars");
           return false;
         }
-        else {
+        else if(validLastName) {
           console.log("Good");
           return true;
         }

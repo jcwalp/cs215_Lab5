@@ -33,14 +33,14 @@
           <div class="left">
             <h2>Sign Up</h2>
             <div class="signUpContainer">
-              <form action="mailto:" method="post">
+              <form action="mailto:" method="post" id="signUpForm">
                 <p class="input-fields">
-                  First name:<input type="text" name="firstname">Last name:<input class="reqd" type="text" id="last_name" name="lastname"> <br>
+                  First name:<input type="text" name="firstname">Last name:<input type="text" id="last_name" name="lastname"><span class="reqd">*</span> <br>
                   Address: <input type="text" name="adress"><br>
                   City: <input type="text" name="city"> <br>
                   State: <input type="text" name="state"> <br>
                   Zip: <input type="text" name="zip"> <br>
-                  E-mail Adress: <input class="reqd" type="text" id="email" name="email">
+                  E-mail Adress: <input type="text" id="email" name="email"><span class="reqd">*</span>
                 </p>
                 <hr />
                 <p class="input-fields">Have you ever paid for ideas?
@@ -64,7 +64,7 @@
                   </p>
                   <p>
                     <input type="submit" class="_submit"value="Submit">
-                    <input type="reset" value="Reset">
+                    <input type="reset" value="Reset" class="_reset">
                   </p>
               </form>
             </div>

@@ -191,3 +191,7 @@ textarea {
 p.input-fields {
   font-size: 2vh;
 }
+
+.reqd{
+  color: red;
+}

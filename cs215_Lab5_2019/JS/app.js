@@ -60,17 +60,18 @@ $(document).ready(function() {
         var email = $('#email').val();
         console.log(lastname);
         console.log(email);
+        var validLastName = notInName.test(lastname);
+
 
         if (lastname.length < 1){
           console.log("Less than 1");
           return false;
         }
-        var validLastName = notInName.test(lastname);
-        if (!validLastName){
+         else if (!validLastName){
           console.log("Invalid Chars");
           return false;
         }
-        else if(validLastName) {
+        else {
           console.log("Good");
           return true;
         }
